@@ -1,0 +1,3231 @@
+{
+  "info": {
+    "_postman_id": "37c64823-cb9a-4bd9-bfbd-edc5359344a9",
+    "name": "Workflow Engine API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52120764"
+  },
+  "item": [
+    {
+      "name": "Workflow Runtime",
+      "item": [
+        {
+          "name": "Get pending tasks for a user or role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assignedTo\": \"string\",\n  \"assignedRole\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/tasks/pending",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "tasks",
+                "pending"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assignedTo\": \"string\",\n  \"assignedRole\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/tasks/pending",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "tasks",
+                    "pending"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 726,\n      \"workflowInstanceId\": 2913,\n      \"recordId\": \"string\",\n      \"nodeId\": \"string\",\n      \"assignedTo\": \"string\",\n      \"assignedRole\": \"string\",\n      \"status\": \"string\",\n      \"remarks\": \"string\",\n      \"createdAt\": \"1993-06-18T12:28:45.162Z\",\n      \"actedAt\": \"1973-11-01T12:03:49.005Z\",\n      \"actionTaken\": true,\n      \"slaDeadline\": \"1999-09-29T23:56:39.352Z\",\n      \"slaBreached\": false,\n      \"slaBreachedAt\": \"2009-12-18T06:31:32.645Z\",\n      \"slaEscalationType\": \"string\",\n      \"allowEdit\": true,\n      \"allowedActions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"actionLabels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"escalated\": true\n    },\n    {\n      \"id\": 5508,\n      \"workflowInstanceId\": 9664,\n      \"recordId\": \"string\",\n      \"nodeId\": \"string\",\n      \"assignedTo\": \"string\",\n      \"assignedRole\": \"string\",\n      \"status\": \"string\",\n      \"remarks\": \"string\",\n      \"createdAt\": \"1977-08-03T15:42:40.870Z\",\n      \"actedAt\": \"1974-05-07T23:30:25.858Z\",\n      \"actionTaken\": false,\n      \"slaDeadline\": \"2003-08-09T05:56:15.746Z\",\n      \"slaBreached\": true,\n      \"slaBreachedAt\": \"2002-02-27T22:14:13.218Z\",\n      \"slaEscalationType\": \"string\",\n      \"allowEdit\": false,\n      \"allowedActions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"actionLabels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"escalated\": false\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Execute task action (approve, reject, send_back, etc.)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskId\": 8241,\n  \"action\": \"string\",\n  \"remarks\": \"string\",\n  \"actedBy\": \"string\",\n  \"actedByName\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/tasks/execute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "tasks",
+                "execute"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskId\": 8241,\n  \"action\": \"string\",\n  \"remarks\": \"string\",\n  \"actedBy\": \"string\",\n  \"actedByName\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/tasks/execute",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "tasks",
+                    "execute"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 9858,\n    \"workflowInstanceId\": 2103,\n    \"recordId\": \"string\",\n    \"nodeId\": \"string\",\n    \"assignedTo\": \"string\",\n    \"assignedRole\": \"string\",\n    \"status\": \"string\",\n    \"remarks\": \"string\",\n    \"createdAt\": \"1946-10-03T07:02:26.746Z\",\n    \"actedAt\": \"1990-05-30T01:56:26.577Z\",\n    \"actionTaken\": false,\n    \"slaDeadline\": \"2012-09-14T17:32:33.811Z\",\n    \"slaBreached\": false,\n    \"slaBreachedAt\": \"1962-10-21T11:04:59.425Z\",\n    \"slaEscalationType\": \"string\",\n    \"allowEdit\": false,\n    \"allowedActions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"actionLabels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"escalated\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Start workflow runtime execution",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"processCode\": \"string\",\n  \"context\": {\n    \"application\": \"string\",\n    \"entityType\": \"string\",\n    \"entityId\": \"string\",\n    \"businessKey\": \"string\",\n    \"variables\": {\n      \"key_0\": {}\n    },\n    \"metadata\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  },\n  \"initiatedBy\": \"string\",\n  \"initiatedByName\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/start",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "start"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"processCode\": \"string\",\n  \"context\": {\n    \"application\": \"string\",\n    \"entityType\": \"string\",\n    \"entityId\": \"string\",\n    \"businessKey\": \"string\",\n    \"variables\": {\n      \"key_0\": {}\n    },\n    \"metadata\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  },\n  \"initiatedBy\": \"string\",\n  \"initiatedByName\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/start",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "start"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"success\": false,\n    \"workflowInstanceId\": 1887,\n    \"taskId\": 1024,\n    \"recordId\": \"string\",\n    \"status\": \"string\",\n    \"currentNodeId\": \"string\",\n    \"message\": \"string\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Execute workflow action with idempotency",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskId\": 557,\n  \"action\": \"string\",\n  \"remarks\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/action",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "action"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskId\": 557,\n  \"action\": \"string\",\n  \"remarks\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/action",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "action"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 9858,\n    \"workflowInstanceId\": 2103,\n    \"recordId\": \"string\",\n    \"nodeId\": \"string\",\n    \"assignedTo\": \"string\",\n    \"assignedRole\": \"string\",\n    \"status\": \"string\",\n    \"remarks\": \"string\",\n    \"createdAt\": \"1946-10-03T07:02:26.746Z\",\n    \"actedAt\": \"1990-05-30T01:56:26.577Z\",\n    \"actionTaken\": false,\n    \"slaDeadline\": \"2012-09-14T17:32:33.811Z\",\n    \"slaBreached\": false,\n    \"slaBreachedAt\": \"1962-10-21T11:04:59.425Z\",\n    \"slaEscalationType\": \"string\",\n    \"allowEdit\": false,\n    \"allowedActions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"actionLabels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"escalated\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get 10 most recent system activity logs across all instances",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/recent-activities",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "recent-activities"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/recent-activities",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "recent-activities"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"title\": \"string\",\n      \"step\": \"string\",\n      \"action\": \"string\",\n      \"by\": \"string\",\n      \"remarks\": \"string\",\n      \"date\": \"1994-02-03T08:07:38.080Z\",\n      \"status\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"step\": \"string\",\n      \"action\": \"string\",\n      \"by\": \"string\",\n      \"remarks\": \"string\",\n      \"date\": \"1993-05-28T11:48:53.871Z\",\n      \"status\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get form-scoped pending tasks for logged-in user",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/pending-tasks",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "pending-tasks"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/pending-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "pending-tasks"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"taskId\": 438,\n      \"instanceId\": 6307,\n      \"recordId\": \"string\",\n      \"workflowName\": \"string\",\n      \"allowedActions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdAt\": \"2025-06-07T02:38:32.936Z\",\n      \"nodeLabel\": \"string\",\n      \"slaStatus\": {\n        \"deadline\": \"1956-12-26T02:17:59.448Z\",\n        \"breachedAt\": \"1972-11-26T07:12:37.058Z\",\n        \"breachedDuration\": \"string\",\n        \"escalationType\": \"string\",\n        \"warningMessage\": \"string\",\n        \"canTakeAction\": false,\n        \"originalAssignee\": \"string\",\n        \"escalated\": true,\n        \"breached\": false\n      },\n      \"allowEdit\": true\n    },\n    {\n      \"taskId\": 7835,\n      \"instanceId\": 2672,\n      \"recordId\": \"string\",\n      \"workflowName\": \"string\",\n      \"allowedActions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdAt\": \"2020-11-21T08:25:26.164Z\",\n      \"nodeLabel\": \"string\",\n      \"slaStatus\": {\n        \"deadline\": \"1991-05-14T14:39:12.834Z\",\n        \"breachedAt\": \"2010-09-11T13:05:02.158Z\",\n        \"breachedDuration\": \"string\",\n        \"escalationType\": \"string\",\n        \"warningMessage\": \"string\",\n        \"canTakeAction\": false,\n        \"originalAssignee\": \"string\",\n        \"escalated\": true,\n        \"breached\": true\n      },\n      \"allowEdit\": false\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get submissions created by logged-in user for a specific form",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/my-submissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "my-submissions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/my-submissions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "my-submissions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"instanceId\": 7014,\n      \"recordId\": \"string\",\n      \"workflowName\": \"string\",\n      \"status\": \"string\",\n      \"currentNodeId\": \"string\",\n      \"submittedAt\": \"1948-02-27T05:29:04.694Z\",\n      \"completedAt\": \"1979-06-23T02:11:47.297Z\"\n    },\n    {\n      \"instanceId\": 3130,\n      \"recordId\": \"string\",\n      \"workflowName\": \"string\",\n      \"status\": \"string\",\n      \"currentNodeId\": \"string\",\n      \"submittedAt\": \"1958-11-24T14:56:43.032Z\",\n      \"completedAt\": \"1988-08-21T17:45:29.356Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get all workflow instances",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "instances"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instances",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "instances"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 3849,\n      \"recordId\": \"string\",\n      \"currentNodeId\": \"string\",\n      \"status\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1957-03-29T03:56:46.371Z\",\n      \"completedAt\": \"1950-09-08T23:00:30.153Z\",\n      \"parentWorkflowInstanceId\": 8621,\n      \"parentNodeId\": \"string\",\n      \"outcome\": \"string\",\n      \"workflowVersionId\": 6713,\n      \"workflowTasks\": [\n        {\n          \"id\": 484,\n          \"workflowInstanceId\": 5282,\n          \"recordId\": \"string\",\n          \"nodeId\": \"string\",\n          \"assignedTo\": \"string\",\n          \"assignedRole\": \"string\",\n          \"status\": \"string\",\n          \"remarks\": \"string\",\n          \"createdAt\": \"1974-05-16T00:36:40.939Z\",\n          \"actedAt\": \"1957-04-17T03:49:20.199Z\",\n          \"actionTaken\": false,\n          \"slaDeadline\": \"2000-01-09T09:36:08.715Z\",\n          \"slaBreached\": true,\n          \"slaBreachedAt\": \"1957-05-31T22:24:07.920Z\",\n          \"slaEscalationType\": \"string\",\n          \"allowEdit\": false,\n          \"allowedActions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"actionLabels\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"escalated\": false\n        },\n        {\n          \"id\": 6655,\n          \"workflowInstanceId\": 6185,\n          \"recordId\": \"string\",\n          \"nodeId\": \"string\",\n          \"assignedTo\": \"string\",\n          \"assignedRole\": \"string\",\n          \"status\": \"string\",\n          \"remarks\": \"string\",\n          \"createdAt\": \"1982-11-04T20:49:04.273Z\",\n          \"actedAt\": \"1976-09-03T14:22:07.527Z\",\n          \"actionTaken\": true,\n          \"slaDeadline\": \"2019-10-24T20:59:17.935Z\",\n          \"slaBreached\": false,\n          \"slaBreachedAt\": \"1958-12-14T00:11:31.636Z\",\n          \"slaEscalationType\": \"string\",\n          \"allowEdit\": false,\n          \"allowedActions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"actionLabels\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"escalated\": false\n        }\n      ]\n    },\n    {\n      \"id\": 9668,\n      \"recordId\": \"string\",\n      \"currentNodeId\": \"string\",\n      \"status\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"2019-09-29T22:15:28.810Z\",\n      \"completedAt\": \"1967-12-11T04:24:58.350Z\",\n      \"parentWorkflowInstanceId\": 8272,\n      \"parentNodeId\": \"string\",\n      \"outcome\": \"string\",\n      \"workflowVersionId\": 5715,\n      \"workflowTasks\": [\n        {\n          \"id\": 4630,\n          \"workflowInstanceId\": 8298,\n          \"recordId\": \"string\",\n          \"nodeId\": \"string\",\n          \"assignedTo\": \"string\",\n          \"assignedRole\": \"string\",\n          \"status\": \"string\",\n          \"remarks\": \"string\",\n          \"createdAt\": \"1974-10-28T21:18:50.619Z\",\n          \"actedAt\": \"1994-06-03T21:18:42.229Z\",\n          \"actionTaken\": false,\n          \"slaDeadline\": \"1983-04-17T23:55:44.176Z\",\n          \"slaBreached\": false,\n          \"slaBreachedAt\": \"1977-06-13T22:55:29.420Z\",\n          \"slaEscalationType\": \"string\",\n          \"allowEdit\": true,\n          \"allowedActions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"actionLabels\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"escalated\": false\n        },\n        {\n          \"id\": 9548,\n          \"workflowInstanceId\": 1511,\n          \"recordId\": \"string\",\n          \"nodeId\": \"string\",\n          \"assignedTo\": \"string\",\n          \"assignedRole\": \"string\",\n          \"status\": \"string\",\n          \"remarks\": \"string\",\n          \"createdAt\": \"1960-04-12T05:57:01.626Z\",\n          \"actedAt\": \"2017-11-10T03:51:34.025Z\",\n          \"actionTaken\": false,\n          \"slaDeadline\": \"2009-02-13T09:24:19.654Z\",\n          \"slaBreached\": true,\n          \"slaBreachedAt\": \"1949-11-30T03:50:27.837Z\",\n          \"slaEscalationType\": \"string\",\n          \"allowEdit\": false,\n          \"allowedActions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"actionLabels\": {\n            \"key_0\": \"string\"\n          },\n          \"escalated\": false\n        }\n      ]\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow instance by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instance/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "instance",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instance/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "instance",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 9596,\n    \"recordId\": \"string\",\n    \"currentNodeId\": \"string\",\n    \"status\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdAt\": \"1977-04-18T17:38:05.784Z\",\n    \"completedAt\": \"1960-06-27T03:23:38.441Z\",\n    \"parentWorkflowInstanceId\": 9926,\n    \"parentNodeId\": \"string\",\n    \"outcome\": \"string\",\n    \"workflowVersionId\": 9187,\n    \"workflowTasks\": [\n      {\n        \"id\": 5892,\n        \"workflowInstanceId\": 3863,\n        \"recordId\": \"string\",\n        \"nodeId\": \"string\",\n        \"assignedTo\": \"string\",\n        \"assignedRole\": \"string\",\n        \"status\": \"string\",\n        \"remarks\": \"string\",\n        \"createdAt\": \"1988-09-01T07:51:57.733Z\",\n        \"actedAt\": \"2021-03-14T20:43:54.250Z\",\n        \"actionTaken\": true,\n        \"slaDeadline\": \"1965-10-29T14:58:32.509Z\",\n        \"slaBreached\": false,\n        \"slaBreachedAt\": \"2021-04-24T08:24:26.371Z\",\n        \"slaEscalationType\": \"string\",\n        \"allowEdit\": false,\n        \"allowedActions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"actionLabels\": {\n          \"key_0\": \"string\"\n        },\n        \"escalated\": false\n      },\n      {\n        \"id\": 8840,\n        \"workflowInstanceId\": 5069,\n        \"recordId\": \"string\",\n        \"nodeId\": \"string\",\n        \"assignedTo\": \"string\",\n        \"assignedRole\": \"string\",\n        \"status\": \"string\",\n        \"remarks\": \"string\",\n        \"createdAt\": \"1963-05-06T09:20:31.236Z\",\n        \"actedAt\": \"1978-01-27T11:48:36.554Z\",\n        \"actionTaken\": true,\n        \"slaDeadline\": \"1949-05-12T23:37:17.646Z\",\n        \"slaBreached\": false,\n        \"slaBreachedAt\": \"2024-08-08T12:00:28.601Z\",\n        \"slaEscalationType\": \"string\",\n        \"allowEdit\": true,\n        \"allowedActions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"actionLabels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"escalated\": false\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow instance by record ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instance/by-record/:recordId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "instance",
+                "by-record",
+                ":recordId"
+              ],
+              "variable": [
+                {
+                  "key": "recordId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/instance/by-record/:recordId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "instance",
+                    "by-record",
+                    ":recordId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "recordId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 9596,\n    \"recordId\": \"string\",\n    \"currentNodeId\": \"string\",\n    \"status\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdAt\": \"1977-04-18T17:38:05.784Z\",\n    \"completedAt\": \"1960-06-27T03:23:38.441Z\",\n    \"parentWorkflowInstanceId\": 9926,\n    \"parentNodeId\": \"string\",\n    \"outcome\": \"string\",\n    \"workflowVersionId\": 9187,\n    \"workflowTasks\": [\n      {\n        \"id\": 5892,\n        \"workflowInstanceId\": 3863,\n        \"recordId\": \"string\",\n        \"nodeId\": \"string\",\n        \"assignedTo\": \"string\",\n        \"assignedRole\": \"string\",\n        \"status\": \"string\",\n        \"remarks\": \"string\",\n        \"createdAt\": \"1988-09-01T07:51:57.733Z\",\n        \"actedAt\": \"2021-03-14T20:43:54.250Z\",\n        \"actionTaken\": true,\n        \"slaDeadline\": \"1965-10-29T14:58:32.509Z\",\n        \"slaBreached\": false,\n        \"slaBreachedAt\": \"2021-04-24T08:24:26.371Z\",\n        \"slaEscalationType\": \"string\",\n        \"allowEdit\": false,\n        \"allowedActions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"actionLabels\": {\n          \"key_0\": \"string\"\n        },\n        \"escalated\": false\n      },\n      {\n        \"id\": 8840,\n        \"workflowInstanceId\": 5069,\n        \"recordId\": \"string\",\n        \"nodeId\": \"string\",\n        \"assignedTo\": \"string\",\n        \"assignedRole\": \"string\",\n        \"status\": \"string\",\n        \"remarks\": \"string\",\n        \"createdAt\": \"1963-05-06T09:20:31.236Z\",\n        \"actedAt\": \"1978-01-27T11:48:36.554Z\",\n        \"actionTaken\": true,\n        \"slaDeadline\": \"1949-05-12T23:37:17.646Z\",\n        \"slaBreached\": false,\n        \"slaBreachedAt\": \"2024-08-08T12:00:28.601Z\",\n        \"slaEscalationType\": \"string\",\n        \"allowEdit\": true,\n        \"allowedActions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"actionLabels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"escalated\": false\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow history for a record",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/history?recordId=string",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "history"
+              ],
+              "query": [
+                {
+                  "key": "recordId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/history?recordId=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "history"
+                  ],
+                  "query": [
+                    {
+                      "key": "recordId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"title\": \"string\",\n      \"step\": \"string\",\n      \"action\": \"string\",\n      \"by\": \"string\",\n      \"remarks\": \"string\",\n      \"date\": \"1994-02-03T08:07:38.080Z\",\n      \"status\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"step\": \"string\",\n      \"action\": \"string\",\n      \"by\": \"string\",\n      \"remarks\": \"string\",\n      \"date\": \"1993-05-28T11:48:53.871Z\",\n      \"status\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow dropdown mapping for form builders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/dropdown",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "dropdown"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/dropdown",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "dropdown"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 3556,\n      \"workflowName\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"id\": 5324,\n      \"workflowName\": \"string\",\n      \"code\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic endpoint to debug workflow instance and task status (for troubleshooting)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/diagnostic?recordId=string",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "diagnostic"
+              ],
+              "query": [
+                {
+                  "key": "recordId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/diagnostic?recordId=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "diagnostic"
+                  ],
+                  "query": [
+                    {
+                      "key": "recordId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow dashboard stats: Completed, InProcess, Submitted counts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/dashboard-stats",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "dashboard-stats"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/dashboard-stats",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "dashboard-stats"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"completed\": 6938,\n    \"inProcess\": 7801,\n    \"submitted\": 8071\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get available actions for a specific record",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/actions?recordId=string",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-runtime",
+                "actions"
+              ],
+              "query": [
+                {
+                  "key": "recordId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-runtime/actions?recordId=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-runtime",
+                    "actions"
+                  ],
+                  "query": [
+                    {
+                      "key": "recordId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {\n    \"taskId\": 1681,\n    \"instanceId\": 1280,\n    \"recordId\": \"string\",\n    \"workflowName\": \"string\",\n    \"currentNodeId\": \"string\",\n    \"currentNodeLabel\": \"string\",\n    \"availableActions\": [\n      {\n        \"action\": \"string\",\n        \"label\": \"string\",\n        \"resultStatus\": \"string\",\n        \"requiresRemarks\": true,\n        \"remarksMandatory\": true,\n        \"predefinedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"requiresInitiatorNotification\": true,\n        \"initiatorEmailTemplate\": \"string\",\n        \"initiatorEmailCC\": [\n          \"string\",\n          \"string\"\n        ],\n        \"initiatorSMSTextTemplate\": \"string\",\n        \"initiatorSystemNotificationTemplate\": \"string\",\n        \"requiresFollowUpNotification\": true,\n        \"followUpEmailTemplate\": \"string\",\n        \"followUpEmailCC\": [\n          \"string\",\n          \"string\"\n        ],\n        \"followUpSMSTextTemplate\": \"string\",\n        \"followUpSystemNotificationTemplate\": \"string\",\n        \"externalAPICall\": \"string\",\n        \"externalAPICallBaseUrl\": \"string\",\n        \"externalAPICallPath\": \"string\"\n      },\n      {\n        \"action\": \"string\",\n        \"label\": \"string\",\n        \"resultStatus\": \"string\",\n        \"requiresRemarks\": true,\n        \"remarksMandatory\": true,\n        \"predefinedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"requiresInitiatorNotification\": false,\n        \"initiatorEmailTemplate\": \"string\",\n        \"initiatorEmailCC\": [\n          \"string\",\n          \"string\"\n        ],\n        \"initiatorSMSTextTemplate\": \"string\",\n        \"initiatorSystemNotificationTemplate\": \"string\",\n        \"requiresFollowUpNotification\": true,\n        \"followUpEmailTemplate\": \"string\",\n        \"followUpEmailCC\": [\n          \"string\",\n          \"string\"\n        ],\n        \"followUpSMSTextTemplate\": \"string\",\n        \"followUpSystemNotificationTemplate\": \"string\",\n        \"externalAPICall\": \"string\",\n        \"externalAPICallBaseUrl\": \"string\",\n        \"externalAPICallPath\": \"string\"\n      }\n    ],\n    \"status\": \"string\",\n    \"slaStatus\": {\n      \"deadline\": \"1974-08-25T10:24:53.625Z\",\n      \"breachedAt\": \"1994-01-20T08:43:49.305Z\",\n      \"breachedDuration\": \"string\",\n      \"escalationType\": \"string\",\n      \"warningMessage\": \"string\",\n      \"canTakeAction\": false,\n      \"originalAssignee\": \"string\",\n      \"escalated\": false,\n      \"breached\": true\n    },\n    \"allowEdit\": true\n  }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Workflow Instance execution, task updates, and history tracking"
+    },
+    {
+      "name": "Workflow Definition",
+      "item": [
+        {
+          "name": "Activate a workflow version by ID",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:versionId/activate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                ":versionId",
+                "activate"
+              ],
+              "variable": [
+                {
+                  "key": "versionId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:versionId/activate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    ":versionId",
+                    "activate"
+                  ],
+                  "variable": [
+                    {
+                      "key": "versionId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Validate workflow definition JSON",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/validate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "validate"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/validate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "validate"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"errors\": [\n      \"string\",\n      \"string\"\n    ],\n    \"warnings\": [\n      \"string\",\n      \"string\"\n    ],\n    \"summary\": \"string\",\n    \"valid\": true,\n    \"errorCount\": 4052,\n    \"warningCount\": 7876\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Toggle workflow master active/inactive status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId/toggle-status",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "masters",
+                ":masterId",
+                "toggle-status"
+              ],
+              "variable": [
+                {
+                  "key": "masterId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId/toggle-status",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "masters",
+                    ":masterId",
+                    "toggle-status"
+                  ],
+                  "variable": [
+                    {
+                      "key": "masterId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create a new workflow master with its initial version",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definitionJson\": \"string\",\n  \"versionName\": \"string\",\n  \"workflowName\": \"string\",\n  \"tenantId\": \"string\",\n  \"active\": false\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/create-workflow-master",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "create-workflow-master"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definitionJson\": \"string\",\n  \"versionName\": \"string\",\n  \"workflowName\": \"string\",\n  \"tenantId\": \"string\",\n  \"active\": false\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/create-workflow-master",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "create-workflow-master"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create new version of existing workflow",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definitionJson\": \"string\",\n  \"versionName\": \"string\",\n  \"workflowName\": \"string\",\n  \"active\": false\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/create-version",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "create-version"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definitionJson\": \"string\",\n  \"versionName\": \"string\",\n  \"workflowName\": \"string\",\n  \"active\": false\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/create-version",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "create-version"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 9033,\n    \"workflowMasterId\": 9224,\n    \"versionName\": \"string\",\n    \"definitionJson\": \"string\",\n    \"createdAt\": \"2016-10-06T07:09:38.875Z\",\n    \"updatedAt\": \"1954-09-06T14:51:29.158Z\",\n    \"active\": false,\n    \"deleted\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Check if workflow has pending instances",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:workflowId/pending-instances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                ":workflowId",
+                "pending-instances"
+              ],
+              "variable": [
+                {
+                  "key": "workflowId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:workflowId/pending-instances",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    ":workflowId",
+                    "pending-instances"
+                  ],
+                  "variable": [
+                    {
+                      "key": "workflowId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"hasPending\": false,\n    \"count\": 4321\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get available actions from end node's incoming edges",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:versionId/available-actions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                ":versionId",
+                "available-actions"
+              ],
+              "variable": [
+                {
+                  "key": "versionId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:versionId/available-actions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    ":versionId",
+                    "available-actions"
+                  ],
+                  "variable": [
+                    {
+                      "key": "versionId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"success\": false,\n    \"actions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"message\": \"string\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get workflow definition (version) by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 1856,\n    \"workflowName\": \"string\",\n    \"versionName\": \"string\",\n    \"definitionJson\": \"string\",\n    \"createdAt\": \"2001-03-30T22:04:38.503Z\",\n    \"updatedAt\": \"1970-10-07T10:05:19.125Z\",\n    \"active\": false\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get a workflow master with all its versions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "masters",
+                ":masterId"
+              ],
+              "variable": [
+                {
+                  "key": "masterId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "masters",
+                    ":masterId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "masterId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 4426,\n    \"workflowName\": \"string\",\n    \"createdAt\": \"1980-12-02T00:26:59.622Z\",\n    \"updatedAt\": \"1997-02-13T06:12:45.284Z\",\n    \"workflowVersions\": [\n      {\n        \"id\": 9204,\n        \"workflowMasterId\": 4306,\n        \"versionName\": \"string\",\n        \"definitionJson\": \"string\",\n        \"createdAt\": \"1984-04-26T18:17:52.166Z\",\n        \"updatedAt\": \"1998-07-25T09:42:45.181Z\",\n        \"active\": false,\n        \"deleted\": true\n      },\n      {\n        \"id\": 6234,\n        \"workflowMasterId\": 1151,\n        \"versionName\": \"string\",\n        \"definitionJson\": \"string\",\n        \"createdAt\": \"1956-08-27T14:27:03.358Z\",\n        \"updatedAt\": \"1984-09-17T22:56:10.753Z\",\n        \"active\": true,\n        \"deleted\": true\n      }\n    ],\n    \"active\": false,\n    \"deleted\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Soft-delete a workflow master. Fails if active instances exist.",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "masters",
+                ":masterId"
+              ],
+              "variable": [
+                {
+                  "key": "masterId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/masters/:masterId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "masters",
+                    ":masterId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "masterId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get all workflow masters with their active versions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/get-all-workflow-masters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "get-all-workflow-masters"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/get-all-workflow-masters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "get-all-workflow-masters"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 1862,\n      \"workflowName\": \"string\",\n      \"code\": \"string\",\n      \"createdAt\": \"1986-09-16T00:09:38.400Z\",\n      \"activeVersion\": {\n        \"id\": 2832,\n        \"versionName\": \"string\",\n        \"createdAt\": \"1964-06-21T19:17:35.534Z\",\n        \"active\": false\n      },\n      \"active\": true\n    },\n    {\n      \"id\": 1769,\n      \"workflowName\": \"string\",\n      \"code\": \"string\",\n      \"createdAt\": \"1986-07-19T23:04:41.618Z\",\n      \"activeVersion\": {\n        \"id\": 3579,\n        \"versionName\": \"string\",\n        \"createdAt\": \"1955-08-03T13:55:36.596Z\",\n        \"active\": true\n      },\n      \"active\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get conditional node keys for a workflow by name and version",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/conditional-keys?workflowName=string&version=7730",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "conditional-keys"
+              ],
+              "query": [
+                {
+                  "key": "workflowName",
+                  "value": "string"
+                },
+                {
+                  "key": "version",
+                  "value": "7730"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/conditional-keys?workflowName=string&version=7730",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "conditional-keys"
+                  ],
+                  "query": [
+                    {
+                      "key": "workflowName",
+                      "value": "string"
+                    },
+                    {
+                      "key": "version",
+                      "value": "7730"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"workflowName\": \"string\",\n    \"version\": 2408,\n    \"conditionalNodes\": [\n      {\n        \"nodeId\": \"string\",\n        \"label\": \"string\",\n        \"keys\": [\n          {\n            \"key\": \"string\",\n            \"operator\": \"string\",\n            \"value\": \"string\",\n            \"nextAction\": \"string\"\n          },\n          {\n            \"key\": \"string\",\n            \"operator\": \"string\",\n            \"value\": \"string\",\n            \"nextAction\": \"string\"\n          }\n        ]\n      },\n      {\n        \"nodeId\": \"string\",\n        \"label\": \"string\",\n        \"keys\": [\n          {\n            \"key\": \"string\",\n            \"operator\": \"string\",\n            \"value\": \"string\",\n            \"nextAction\": \"string\"\n          },\n          {\n            \"key\": \"string\",\n            \"operator\": \"string\",\n            \"value\": \"string\",\n            \"nextAction\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"allUniqueKeys\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get active instance count for a specific workflow or all workflows",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/active-instance-counts?workflowId=4321",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "active-instance-counts"
+              ],
+              "query": [
+                {
+                  "key": "workflowId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/active-instance-counts?workflowId=4321",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "active-instance-counts"
+                  ],
+                  "query": [
+                    {
+                      "key": "workflowId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": 5476,\n    \"key_1\": 4181,\n    \"key_2\": 8314\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Soft-delete a workflow version. Fails if active or has running instances.",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/versions/:versionId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "workflow-definitions",
+                "versions",
+                ":versionId"
+              ],
+              "variable": [
+                {
+                  "key": "versionId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/workflow-definitions/versions/:versionId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "workflow-definitions",
+                    "versions",
+                    ":versionId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "versionId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Workflow definition CRUD, validation, and version control endpoints"
+    },
+    {
+      "name": "mapping-controller",
+      "item": [
+        {
+          "name": "sync Roles",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"string\",\n  \"roles\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles/sync",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "roles",
+                "sync"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"string\",\n  \"roles\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles/sync",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "roles",
+                    "sync"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "sync Roles 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"string\",\n  \"roles\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/mappings/roles/sync",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "roles",
+                "sync"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"string\",\n  \"roles\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/roles/sync",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "roles",
+                    "sync"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "get Processes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/mappings/processes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "processes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/processes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "processes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 8891,\n      \"processCode\": \"string\",\n      \"processName\": \"string\",\n      \"description\": \"string\",\n      \"workflowMasterId\": 1605,\n      \"entityType\": \"string\",\n      \"businessKeyPrefix\": \"string\",\n      \"assignmentConfig\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"isActive\": false\n    },\n    {\n      \"id\": 9523,\n      \"processCode\": \"string\",\n      \"processName\": \"string\",\n      \"description\": \"string\",\n      \"workflowMasterId\": 3101,\n      \"entityType\": \"string\",\n      \"businessKeyPrefix\": \"string\",\n      \"assignmentConfig\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"isActive\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "create Process",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 6108,\n  \"processCode\": \"string\",\n  \"processName\": \"string\",\n  \"description\": \"string\",\n  \"workflowMasterId\": 9669,\n  \"entityType\": \"string\",\n  \"businessKeyPrefix\": \"string\",\n  \"assignmentConfig\": {\n    \"key_0\": {}\n  },\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/mappings/processes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "processes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 6108,\n  \"processCode\": \"string\",\n  \"processName\": \"string\",\n  \"description\": \"string\",\n  \"workflowMasterId\": 9669,\n  \"entityType\": \"string\",\n  \"businessKeyPrefix\": \"string\",\n  \"assignmentConfig\": {\n    \"key_0\": {}\n  },\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/processes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "processes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 4733,\n    \"processCode\": \"string\",\n    \"processName\": \"string\",\n    \"description\": \"string\",\n    \"workflowMasterId\": 5309,\n    \"entityType\": \"string\",\n    \"businessKeyPrefix\": \"string\",\n    \"assignmentConfig\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"isActive\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get Processes 1",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "processes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "processes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": 8891,\n      \"processCode\": \"string\",\n      \"processName\": \"string\",\n      \"description\": \"string\",\n      \"workflowMasterId\": 1605,\n      \"entityType\": \"string\",\n      \"businessKeyPrefix\": \"string\",\n      \"assignmentConfig\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"isActive\": false\n    },\n    {\n      \"id\": 9523,\n      \"processCode\": \"string\",\n      \"processName\": \"string\",\n      \"description\": \"string\",\n      \"workflowMasterId\": 3101,\n      \"entityType\": \"string\",\n      \"businessKeyPrefix\": \"string\",\n      \"assignmentConfig\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"isActive\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "create Process 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 6108,\n  \"processCode\": \"string\",\n  \"processName\": \"string\",\n  \"description\": \"string\",\n  \"workflowMasterId\": 9669,\n  \"entityType\": \"string\",\n  \"businessKeyPrefix\": \"string\",\n  \"assignmentConfig\": {\n    \"key_0\": {}\n  },\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "processes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 6108,\n  \"processCode\": \"string\",\n  \"processName\": \"string\",\n  \"description\": \"string\",\n  \"workflowMasterId\": 9669,\n  \"entityType\": \"string\",\n  \"businessKeyPrefix\": \"string\",\n  \"assignmentConfig\": {\n    \"key_0\": {}\n  },\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "processes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 4733,\n    \"processCode\": \"string\",\n    \"processName\": \"string\",\n    \"description\": \"string\",\n    \"workflowMasterId\": 5309,\n    \"entityType\": \"string\",\n    \"businessKeyPrefix\": \"string\",\n    \"assignmentConfig\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"isActive\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update Process Config",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/mappings/processes/:processId/config",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "processes",
+                ":processId",
+                "config"
+              ],
+              "variable": [
+                {
+                  "key": "processId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/processes/:processId/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "processes",
+                    ":processId",
+                    "config"
+                  ],
+                  "variable": [
+                    {
+                      "key": "processId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 4733,\n    \"processCode\": \"string\",\n    \"processName\": \"string\",\n    \"description\": \"string\",\n    \"workflowMasterId\": 5309,\n    \"entityType\": \"string\",\n    \"businessKeyPrefix\": \"string\",\n    \"assignmentConfig\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"isActive\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update Process Config 1",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes/:processId/config",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "processes",
+                ":processId",
+                "config"
+              ],
+              "variable": [
+                {
+                  "key": "processId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes/:processId/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "processes",
+                    ":processId",
+                    "config"
+                  ],
+                  "variable": [
+                    {
+                      "key": "processId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"string\",\n  \"data\": {\n    \"id\": 4733,\n    \"processCode\": \"string\",\n    \"processName\": \"string\",\n    \"description\": \"string\",\n    \"workflowMasterId\": 5309,\n    \"entityType\": \"string\",\n    \"businessKeyPrefix\": \"string\",\n    \"assignmentConfig\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"isActive\": true\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get Roles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "roles"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "roles"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "get Roles 1",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/mappings/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "roles"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/roles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "roles"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete Role",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/mappings/roles/entry/:roleId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "roles",
+                "entry",
+                ":roleId"
+              ],
+              "variable": [
+                {
+                  "key": "roleId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/roles/entry/:roleId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "roles",
+                    "entry",
+                    ":roleId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "roleId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete Role 1",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles/entry/:roleId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "roles",
+                "entry",
+                ":roleId"
+              ],
+              "variable": [
+                {
+                  "key": "roleId",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/roles/entry/:roleId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "roles",
+                    "entry",
+                    ":roleId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "roleId",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete Process",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/mappings/processes/:processId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mappings",
+                "processes",
+                ":processId"
+              ],
+              "variable": [
+                {
+                  "key": "processId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/mappings/processes/:processId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mappings",
+                    "processes",
+                    ":processId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "processId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete Process 1",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes/:processId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow-engine-api",
+                "mappings",
+                "processes",
+                ":processId"
+              ],
+              "variable": [
+                {
+                  "key": "processId",
+                  "value": "4321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/workflow-engine-api/mappings/processes/:processId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "workflow-engine-api",
+                    "mappings",
+                    "processes",
+                    ":processId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "processId",
+                      "value": "4321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\",\n  \"data\": {}\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "any"
+    }
+  ]
+}

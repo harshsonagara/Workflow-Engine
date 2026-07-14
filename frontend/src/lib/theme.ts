@@ -1,0 +1,20 @@
+// Brand palette — keep in sync with --color-brand-* in globals.css
+export const N = {
+  navy:        "#F27823",
+  navyHover:   "#E35F16",
+  navyLight:   "#FEF7EE",
+  border:      "#E2E8F0",
+  headerBg:    "#F8FAFC",
+  text:        "#334155",
+  textMuted:   "#94A3B8",
+  textSub:     "#64748B",
+  white:       "#FFFFFF",
+  green:       "#059669",
+  greenBg:     "#ECFDF5",
+  greenBorder: "#6EE7B7",
+  red:         "#E11D48",
+  redBg:       "#FFF1F2",
+  redBorder:   "#FECDD3",
+  indigo:      "#007777",
+  indigoBg:    "#E6F2F2",
+} as const;

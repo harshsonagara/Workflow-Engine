@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@variant dark (.never-match-dark &);
+
+:root {
+  --background: #ffffff !important;
+  --foreground: #171717 !important;
+  color-scheme: light !important;
+}
+
+/*
+ * Brand theme tokens — single source of truth for the product palette.
+ * Silver FGPortal identity: orange primary (#F27823) with teal contrast
+ * (#007777). Every `brand-*` utility resolves here — re-theming the whole
+ * app is a one-block change.
+ */
+@theme {
+  --color-brand-50:  #fef7ee;
+  --color-brand-100: #fdeeda;
+  --color-brand-200: #fad9b5;
+  --color-brand-300: #f7bd84;
+  --color-brand-400: #f49d52;
+  --color-brand-500: #f27823;
+  --color-brand-600: #e35f16;
+  --color-brand-700: #bc4814;
+  --color-brand-800: #963a18;
+  --color-brand-900: #793116;
+  --color-brand-950: #411806;
+  --color-contrast-500: #007777; /* teal accent for secondary emphasis */
+  --color-contrast-600: #005f5f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: #ffffff !important;
+  color: #171717 !important;
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+input, select, textarea {
+  color: #171717 !important;
+  background-color: #ffffff !important;
+}
+
+/* Custom utility for general readability of text elements */
+.text-zinc-905 {
+  color: #171717 !important;
+}
+
+/* Toast animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-slideInRight {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+}

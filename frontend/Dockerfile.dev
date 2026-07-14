@@ -1,0 +1,8 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci
+# Bake config files into image so they're present even before bind-mounts layer on top
+COPY postcss.config.mjs tsconfig.json next.config.ts ./
+COPY src ./src
+COPY public ./public
